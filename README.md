@@ -23,8 +23,20 @@ SLURM 클러스터에서 Gemma4 (4B / 31B) 및 Qwen3-Embedding-8B 를 vLLM OpenA
 
 ### 2-1. Python 환경 (vllm 0.19.0 + transformers 5.5.0)
 
+**재현 가능한 정확한 버전 (권장)** — `requirements.lock.txt` 사용:
+
 ```bash
-uv venv venv_gemma4
+uv venv venv_gemma4 --python 3.12
+source venv_gemma4/bin/activate
+uv pip install -r requirements.lock.txt
+```
+
+> `requirements.lock.txt` 는 실제 동작하는 환경에서 `uv pip freeze` 로 동결한 174개 패키지 목록. vllm==0.19.0, transformers==5.5.0, torch==2.10.0+cu126 고정.
+
+**처음부터 설치 (nightly drift 주의)**:
+
+```bash
+uv venv venv_gemma4 --python 3.12
 source venv_gemma4/bin/activate
 
 uv pip install -U vllm --pre \
@@ -189,6 +201,7 @@ evospec/
 ├── README.md                          ← 본 문서
 ├── CLAUDE.md                          ← 내부 운영 노트
 ├── .env.example                       ← 필요 환경변수 템플릿
+├── requirements.lock.txt              ← 동결된 패키지 버전 (174개)
 ├── .gitignore
 ├── setup_vllm_env.sh                  ← (legacy) conda 기반 셋업
 ├── submit_vllm.sh                     ← 4B + 31B 동시 제출 헬퍼

@@ -8,7 +8,7 @@
   - `all`: 전체 노드 통합 파티션
 - 공유 파일시스템: `/mnt/lustre/slurm/users/daewon/`
 - Conda base: `/mnt/lustre/slurm/users/daewon/miniforge3`
-- CUDA: 12.6 (cu126), torch 2.7.0+cu126
+- CUDA: 12.6 (cu126), torch 2.10.0+cu126
 - **vLLM 환경: `venv_gemma4`** (uv venv, vllm 0.19.0 + transformers 5.5.0)
   - 경로: `/mnt/lustre/slurm/users/daewon/evospec/venv_gemma4`
   - 활성화: `source /mnt/lustre/slurm/users/daewon/evospec/venv_gemma4/bin/activate`
