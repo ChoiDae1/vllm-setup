@@ -1,0 +1,29 @@
+# venv / packaged venv
+venv_gemma4/
+venv_gemma4.tar.gz
+*.tar.gz
+
+# HF cache / models
+hf_cache/
+
+# Runtime outputs
+logs/
+*.out
+*.err
+
+# Claude local settings
+.claude/
+
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
